@@ -1,5 +1,5 @@
 {
-  "name": "RNFirebaseStarter",
+  "name": "MoodTracker",
   "version": "5.3.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.3",
-    "react-native-firebase": "^5.3.1"
+    "react-native-firebase": "^5.3.1",
+    "react-native-google-sign-in": "^1.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

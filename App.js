@@ -1,12 +1,19 @@
 import React from 'react';
-import { StyleSheet, Platform, Image, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Platform, Image, Text, View, ScrollView, Slider, Button } from 'react-native';
 
 import firebase from 'react-native-firebase';
+//import { GoogleSignin, GoogleSigninButton } from 'react-native-google-sign-in'
+//import console = require('console');
 
 export default class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      slide1: -1,
+      slide2: -1
+    };
+
+    //this.ref = firebase.firestore().collection('mood-user1')
   }
 
   async componentDidMount() {
@@ -17,9 +24,63 @@ export default class App extends React.Component {
     // await firebase.analytics().logEvent('foo', { bar: '123'});
   }
 
+  submitData() {
+    console.log(this.state)
+  }
+
+  /*async googleLogin() {
+    try {
+      await GoogleSignin.configure();
+      const data = await GoogleSignin.signIn()
+      const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken, data.accessToken)
+      const firebaseUserCredential = await firebase.auth().signInWithCredential(credential)
+
+      console.warn(JSON.stringify(firebaseUserCredential.user.toJSON()))
+    } catch(e) {
+      console.error(e)
+    }
+  }*/
+
+  /*
+  <GoogleSigninButton
+          style={{ width: 192, height: 48 }}
+          size={GoogleSigninButton.Size.Wide}
+          color={GoogleSigninButton.Color.Dark}
+          onPress={this.googleLogin()}/>
+  */
+
   render() {
     return (
       <ScrollView>
+        <Text style={styles.logo}>Mood Tracking App</Text>
+        <Text>How relaxed vs anxious do you feel right now?</Text>
+        <Slider
+          step={1}
+          maximumValue={100}
+          value={50}
+          onValueChange={(value) => this.setState({slide1: value})}
+        />
+        <Text>{this.state.slide1}</Text>
+        <Text>How happy versus sad do you feel right now?</Text>
+        <Slider
+          step={1}
+          maximumValue={100}
+          value={50}
+          onValueChange={(value) => this.setState({slide2: value})}
+        />
+        <Text>{this.state.slide2}</Text>
+        <Button
+            title={'Submit'}
+            disabled={this.state.slide1 == -1 || this.state.slide2 == -1}
+            onPress={() => this.submitData()}
+          />
+      </ScrollView>
+    );
+  }
+}
+
+/*
+<ScrollView>
         <View style={styles.container}>
           <Image source={require('./assets/ReactNativeFirebase.png')} style={[styles.logo]}/>
           <Text style={styles.welcome}>
@@ -59,9 +120,7 @@ export default class App extends React.Component {
           </View>
         </View>
       </ScrollView>
-    );
-  }
-}
+*/
 
 const styles = StyleSheet.create({
   container: {
@@ -72,10 +131,10 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 120,
-    marginBottom: 16,
+    marginBottom: 0,
     marginTop: 64,
     padding: 10,
-    width: 135,
+    width: 200,
   },
   welcome: {
     fontSize: 20,

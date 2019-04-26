@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "560385075832",
+    "firebase_url": "https://moodtracker-462c2.firebaseio.com",
+    "project_id": "moodtracker-462c2",
+    "storage_bucket": "moodtracker-462c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560385075832:android:8e45c242b0f1a4af",
+        "android_client_info": {
+          "package_name": "com.neatlabs.moodtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560385075832-khql12tend7a1g3saqm4p3ubobpnnlje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9rPvxEc4gV1IG0YOsa0ARw0BHW0vr7DI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560385075832-khql12tend7a1g3saqm4p3ubobpnnlje.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "560385075832-dqfg0gjbaijuo4oshgggdar9jasbht1b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.MoodTracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
