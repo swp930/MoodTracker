@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList, Button, View, Text, TextInput } from 'react-native';
+import { ScrollView, StyleSheet, FlatList, Button, View, Text, TextInput } from 'react-native';
 
 import firebase from 'react-native-firebase';
 import Todo from './Todo'
@@ -8,7 +8,7 @@ import Todo from './Todo'
 export default class Todos extends React.Component {
   constructor() {
     super();
-    this.ref = firebase.firestore().collection('todos')
+    this.ref = firebase.firestore().collection("cities")
     this.unsubscribe = null
 
     this.state = {
@@ -56,9 +56,48 @@ export default class Todos extends React.Component {
   }
 
   addTodo() {
-    this.ref.add({
+    /*this.ref.add({
       title: this.state.textInput,
       complete: false,
+    })*/
+    /*db = firebase.firestore().collection("cities").doc("LA")
+    db.collection("newcollection").doc("LA2").set({
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    })
+    .then(function() {
+      console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });*/
+
+    /*db = firebase.firestore().collection("users").doc("swap2")
+    db.collection("data").doc("newdata").set({
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    })
+    .then(function() {
+      console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });*/
+
+    db = firebase.firestore().collection("users")
+    db.doc("sdpatil3@ucsd.edu").set({
+      "name": "Swapnil Patil",
+      "email": "sdpatil@ucsd.edu"
+    })
+
+    db = db.doc("sdpatil3@ucsd.edu")
+    var date = new Date()
+    var time = "" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    db.collection("mooddata").doc(time).set({
+      "slider1": 40,
+      "slider2": 70
     })
 
     this.setState({
@@ -72,7 +111,27 @@ export default class Todos extends React.Component {
     }
 
     return (
-        <View style={{flex: 1, marginTop: 20}}>
+      <View>
+            <ScrollView style={styles.logo}>
+                <Text>List of TODOs</Text>
+            </ScrollView>
+            <TextInput
+                placeholder={'Add TODO'}
+                value={this.state.textInput}
+                onChangeText={(text) => this.updateTextInput(text)}
+            />
+            <Button
+                title={'Add TODO'}
+                disabled={!this.state.textInput.length}
+                onPress={() => this.addTodo()}
+            />
+        </View>
+    )
+  }
+}
+
+/**
+ * <View style={{flex: 1, marginTop: 20}}>
           <FlatList
             data={this.state.todos}
             renderItem={({ item }) => <Todo {...item}/>}
@@ -88,26 +147,10 @@ export default class Todos extends React.Component {
             onPress={() => this.addTodo()}
           />
         </View>
-    )
-  }
-}
+ */
 
 /**
- * <View>
-            <ScrollView style={styles.logo}>
-                <Text>List of TODOs</Text>
-            </ScrollView>
-            <TextInput
-                placeholder={'Add TODO'}
-                value={this.state.textInput}
-                onChangeText={(text) => this.updateTextInput(text)}
-            />
-            <Button
-                title={'Add TODO'}
-                disabled={!this.state.textInput.length}
-                onPress={() => this.addTodo()}
-            />
-        </View>
+ * 
  */
 
 const styles = StyleSheet.create({

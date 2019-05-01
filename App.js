@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Platform, Image, Text, View, ScrollView, Slider, Button } from 'react-native';
 
 import firebase from 'react-native-firebase';
-//import { GoogleSignin, GoogleSigninButton } from 'react-native-google-sign-in'
+import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin'
+import { thisTypeAnnotation } from '@babel/types';
 //import console = require('console');
 
 export default class App extends React.Component {
@@ -10,10 +11,14 @@ export default class App extends React.Component {
     super();
     this.state = {
       slide1: -1,
-      slide2: -1
+      slide2: -1,
+      email: "",
+      id: "",
+      name: ""
     };
 
-    //this.ref = firebase.firestore().collection('mood-user1')
+    this.googleLogin()
+    this.ref = firebase.firestore().collection('mood-user1')
   }
 
   async componentDidMount() {
@@ -26,20 +31,41 @@ export default class App extends React.Component {
 
   submitData() {
     console.log(this.state)
+
+    db = firebase.firestore().collection("users")
+    db.doc(this.state.email).set({
+      "name": this.state.name,
+      "email": this.state.email
+    })
+
+    db = db.doc(this.state.email)
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
+    db.collection("mooddata").doc(dateTime).set({
+      "slider1": this.state.slide1,
+      "slider2": this.state.slide2
+    })
   }
 
-  /*async googleLogin() {
+  async googleLogin() {
     try {
       await GoogleSignin.configure();
       const data = await GoogleSignin.signIn()
+      this.setState({
+        email: data.user.email,
+        id: data.user.id,
+        name: data.user.name
+      })
       const credential = firebase.auth.GoogleAuthProvider.credential(data.idToken, data.accessToken)
       const firebaseUserCredential = await firebase.auth().signInWithCredential(credential)
 
-      console.warn(JSON.stringify(firebaseUserCredential.user.toJSON()))
+      //console.warn(JSON.stringify(firebaseUserCredential.user.toJSON()))
     } catch(e) {
       console.error(e)
     }
-  }*/
+  }
 
   /*
   <GoogleSigninButton
@@ -57,7 +83,7 @@ export default class App extends React.Component {
         <Slider
           step={1}
           maximumValue={100}
-          value={50}
+          value={0}
           onValueChange={(value) => this.setState({slide1: value})}
         />
         <Text>{this.state.slide1}</Text>
@@ -65,7 +91,7 @@ export default class App extends React.Component {
         <Slider
           step={1}
           maximumValue={100}
-          value={50}
+          value={0}
           onValueChange={(value) => this.setState({slide2: value})}
         />
         <Text>{this.state.slide2}</Text>
@@ -74,6 +100,15 @@ export default class App extends React.Component {
             disabled={this.state.slide1 == -1 || this.state.slide2 == -1}
             onPress={() => this.submitData()}
           />
+        <Text>
+          {this.state.email}
+        </Text>
+        <Text>
+          {this.state.id}
+        </Text>
+        <Text>
+          {this.state.name}
+        </Text>
       </ScrollView>
     );
   }

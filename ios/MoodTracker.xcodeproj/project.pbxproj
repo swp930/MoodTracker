@@ -42,7 +42,9 @@
 		8AEB10120B9847F8905B7DA1 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C97DD56AE46E45398AF70E2E /* libRNFirebase.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ADDA258B0C3DE0261C60A364 /* libPods-MoodTracker-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B23455DE3C4D5673E7318E /* libPods-MoodTracker-tvOSTests.a */; };
-		EA357A30226C22B100299C11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA357A2F226C22B100299C11 /* GoogleService-Info.plist */; };
+		EA7CDC0A22779DB900FF861B /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7CDBED22779D7400FF861B /* libRCTPushNotification.a */; };
+		EA9101AF2272969F00002E05 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9101AE2272965E00002E05 /* libRNGoogleSignin.a */; };
+		EA9101B122729D7300002E05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA9101B022729D7200002E05 /* GoogleService-Info.plist */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
@@ -328,6 +330,27 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNFirebase;
 		};
+		EA7CDBEC22779D7400FF861B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7CDBDB22779D7400FF861B /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTPushNotification;
+		};
+		EA7CDBEE22779D7400FF861B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA7CDBDB22779D7400FF861B /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
+		};
+		EA9101AD2272965E00002E05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA9101832272965E00002E05 /* RNGoogleSignin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
+			remoteInfo = RNGoogleSignin;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -367,7 +390,9 @@
 		C97DD56AE46E45398AF70E2E /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
 		CA346B7E0D05342E8E702E1C /* Pods-MoodTracker-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodTracker-tvOSTests/Pods-MoodTracker-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8E13BB553BB18534EEFFDDE /* Pods-MoodTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoodTracker/Pods-MoodTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		EA357A2F226C22B100299C11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA7CDBDB22779D7400FF861B /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		EA9101832272965E00002E05 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGoogleSignin.xcodeproj; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; };
+		EA9101B022729D7200002E05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F2C89EE2F4607D097253AE26 /* Pods-MoodTracker-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoodTracker-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoodTracker-tvOSTests/Pods-MoodTracker-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -386,6 +411,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA7CDC0A22779DB900FF861B /* libRCTPushNotification.a in Frameworks */,
+				EA9101AF2272969F00002E05 /* libRNGoogleSignin.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -596,6 +623,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				EA7CDBDB22779D7400FF861B /* RCTPushNotification.xcodeproj */,
+				EA9101832272965E00002E05 /* RNGoogleSignin.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -625,7 +654,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				EA357A2F226C22B100299C11 /* GoogleService-Info.plist */,
+				EA9101B022729D7200002E05 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* MoodTracker */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MoodTrackerTests */,
@@ -671,6 +700,23 @@
 			isa = PBXGroup;
 			children = (
 				EA357A2E226C1D6E00299C11 /* libRNFirebase.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA7CDBDC22779D7400FF861B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA7CDBED22779D7400FF861B /* libRCTPushNotification.a */,
+				EA7CDBEF22779D7400FF861B /* libRCTPushNotification-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA9101842272965E00002E05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA9101AE2272965E00002E05 /* libRNGoogleSignin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -765,7 +811,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 7479GURPJH;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 7479GURPJH;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -820,6 +870,10 @@
 					ProjectRef = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
 				},
 				{
+					ProductGroup = EA7CDBDC22779D7400FF861B /* Products */;
+					ProjectRef = EA7CDBDB22779D7400FF861B /* RCTPushNotification.xcodeproj */;
+				},
+				{
 					ProductGroup = 139105B71AF99BAD00B5F7CC /* Products */;
 					ProjectRef = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
 				},
@@ -842,6 +896,10 @@
 				{
 					ProductGroup = EA357A2A226C1D6E00299C11 /* Products */;
 					ProjectRef = 8C34C759D8274A5CB8F8E751 /* RNFirebase.xcodeproj */;
+				},
+				{
+					ProductGroup = EA9101842272965E00002E05 /* Products */;
+					ProjectRef = EA9101832272965E00002E05 /* RNGoogleSignin.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1121,6 +1179,27 @@
 			remoteRef = EA357A2D226C1D6E00299C11 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		EA7CDBED22779D7400FF861B /* libRCTPushNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTPushNotification.a;
+			remoteRef = EA7CDBEC22779D7400FF861B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA7CDBEF22779D7400FF861B /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = EA7CDBEE22779D7400FF861B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA9101AE2272965E00002E05 /* libRNGoogleSignin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGoogleSignin.a;
+			remoteRef = EA9101AD2272965E00002E05 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1137,7 +1216,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				EA357A30226C22B100299C11 /* GoogleService-Info.plist in Resources */,
+				EA9101B122729D7300002E05 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,7 +1250,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1240,12 +1319,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MoodTracker/Pods-MoodTracker-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1344,6 +1425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7479GURPJH;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1374,6 +1456,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7479GURPJH;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
@@ -1402,6 +1485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 7479GURPJH;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
@@ -1413,7 +1497,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neatlabs.MoodTracker;
 				PRODUCT_NAME = MoodTracker;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1425,6 +1509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7479GURPJH;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
@@ -1436,7 +1521,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neatlabs.MoodTracker;
 				PRODUCT_NAME = MoodTracker;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
