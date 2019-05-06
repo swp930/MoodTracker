@@ -16,6 +16,7 @@ export default class Todos extends React.Component {
       loading: true,
       todos: []
     };
+    this.isCurrentSlotSubmitted()
   }
 
   async componentDidMount() {
@@ -49,6 +50,24 @@ export default class Todos extends React.Component {
       todos,
       loading: false,
     })
+  }
+
+  isCurrentSlotSubmitted() {
+    var todaysDate = new Date();
+    var docDate = "" + todaysDate.getFullYear() + "-" + (todaysDate.getMonth() + 1) + "-" + todaysDate.getDate()
+    //var docDate = "" + todaysDate.getFullYear() + "-" + (4) + "-" + 30
+    console.log(docDate)
+    db = firebase.firestore().collection("users").doc("sdpatil@ucsd.edu").collection("mooddata").doc(docDate).collection("data").doc("slot1")
+    db.get().then(function(doc) {
+      if (doc.exists) {
+          console.log("Document data:", doc.data());
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+    });
   }
 
   updateTextInput(value) {

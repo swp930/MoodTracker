@@ -10,6 +10,13 @@ export default class PushEx extends Component {
         this.notif = new NotifService(this.onRegister.bind(this), this.onNotif.bind(this));
     }
 
+    scheduleNotifAtDate() {
+      var runAt = new Date()
+      runAt.setMinutes(55)
+      console.log(runAt)
+      this.notif.scheduleNotifAtDate(runAt)
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -17,6 +24,7 @@ export default class PushEx extends Component {
                 <View style={styles.spacer}></View>
                 <TouchableOpacity style={styles.button} onPress={() => { this.notif.localNotif() }}><Text>Local Notification (now)</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.button} onPress={() => { this.notif.scheduleNotif() }}><Text>Schedule Notification in 30s</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => { this.scheduleNotifAtDate() }}><Text>Schedule Notification at 12:55</Text></TouchableOpacity>
             </View>
         )
     }
